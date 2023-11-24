@@ -31,5 +31,45 @@
         <script defer src="index.js"></script>
     </head>
 
-    <body></body>
+    <body>
+        <!-- !image element -->
+        <img
+            id="image"
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt="sign up illustration"
+        />
+
+        <!-- !main section -->
+        <main class="main-container">
+            <!-- *heading -->
+            <h1 class="heading">Stay Updated!</h1>
+
+            <!-- *paragraph -->
+            <p class="text">
+                Join 60,000+ product managers receiving monthly updates on:
+            </p>
+
+            <!-- *bullet points -->
+            <ul id="points-container">
+                <li class="list-point">
+                    Product discovery and building what matters
+                </li>
+                <li class="list-point">
+                    Measuring to ensure updates are a success
+                </li>
+                <li class="list-point">And much more!</li>
+            </ul>
+
+            <!-- *form with a get request (retrieving information) -->
+            <form id="email-form" action="/" method="get">
+                <label id="email-label" for="email-input">Email address</label>
+                <input id="input-textbox" type="text" id="email-input" />
+
+                <!-- *subscribe button -->
+                <button id="subscribe-btn" type="button">
+                    Subscribe to monthly newsletter
+                </button>
+            </form>
+        </main>
+    </body>
 </html>
