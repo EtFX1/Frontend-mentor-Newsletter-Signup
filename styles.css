@@ -1,22 +1,27 @@
 * {
     font-family: "Roboto", sans-serif;
-    letter-spacing: 0.0125rem;
+    letter-spacing: 0.005rem;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* *contains everything below the container */
+/* *contains everything inside the white part*/
 main.main-container {
     color: hsl(234, 29%, 20%);
     font-family: 1rem;
-    line-height: 1.25rem;
-    padding: 2.3rem 16px;
+    line-height: 1.35rem;
+    padding: 2.3rem 1rem;
+    /* height: 100vh; */
 }
 
 /* *title image */
-img#image {
+img#mobile-image {
     width: 100%;
+}
+
+img#desktop-image {
+    display: none;
 }
 
 /* * applies margin bottom to heading and paragraph */
@@ -39,17 +44,15 @@ ul#points-container {
 li.list-point {
     list-style: none;
     background: url("./assets/images/icon-list-mobile.svg") no-repeat;
-    /* border: .125rem solid; */
     padding-left: 1.875rem;
     margin-bottom: 1rem;
 }
 
-/* *form  */
+/* *form container */
 form#email-form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.2em;
-    /* border: 0.125rem solid; */
+    margin-bottom: 1.2rem;
 }
 
 /* *form label (email address) */
@@ -61,15 +64,14 @@ label#email-label {
 
 /* *form textbox */
 input#input-textbox {
-    border: 0.9px solid hsl(231, 7%, 60%);
+    border: 0.09px solid hsl(231, 7%, 60%);
     border-radius: 8px;
-    padding: 16.5px 25px;
+    padding: 16.5px 256    margin-bottom: 20px;
 }
 
 /* *selects and styles the "text" attribute */
 input#input-textbox[type="text"] {
-    color: hsl(231, 7%, 60%);
-    margin-bottom: 20px;
+    color: hsl(228, 2%, 50%);
 }
 
 /* *removes default color when textbox is clicked */
@@ -83,15 +85,101 @@ button#subscribe-btn {
     border: none;
     font-weight: bold;
     letter-spacing: 0.04rem;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: white;
     background-color: hsl(235, 18%, 26%);
     width: 100%;
-    padding: 18px;
-    border-radius: 9px;
+    padding: 1.125rem;
+    border-radius: 0.625rem;
 }
 
 /* *changes button color opacity on hover */
 button#subscribe-btn:hover {
     background-color: hsla(235, 18%, 26%, 0.9);
 }
+
+/* * changes certain elements when the min-width is >= 992px */
+@media (min-width: 992px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(235, 18%, 26%);
+        height: 100vh;
+    }
+
+    img#mobile-image {
+        display: none;
+    }
+
+    img#desktop-image {
+        display: block;
+    }
+    main.main-container {
+        display: flex; /*? making the main container a flex container, so the content and image ca be side by side */
+        background-color: white;
+        width: 44rem;
+        height: 31rem;
+        padding: 1.1rem 1.1rem 1.1rem 0;
+        border-radius: 2rem;
+        border: 0;
+        box-shadow: 0.625rem 0.625rem 3.125rem 1.25rem;
+    }
+
+    section#main-content {
+        margin-top: 3.75rem;
+        padding: 0 3.4rem 0 2.5rem;
+    }
+
+    /* * "Stay Updated!" value */
+    h1.heading {
+        font-size: 2.3rem;
+        margin-bottom: 1.8rem;
+    }
+
+    /* * applies margin bottom to heading and paragraph */
+
+    p.text {
+        margin-bottom: 1.2rem;
+    }
+
+    p.text,
+    li.list-point {
+        font-size: 0.75rem;
+    }
+
+    li.list-point {
+        margin-bottom: 0.4rem;
+    }
+
+    /* * list container */
+    ul#points-container {
+        margin-bottom: 1.3rem;
+    }
+
+    label#email-label {
+        font-size: 0.6rem;
+        margin-bottom: 0.25rem;
+    }
+
+    /* *form textbox */
+    input#input-textbox {
+        padding: 0.625rem 1.6rem;
+        margin-bottom: 13px;
+    }
+
+    button#subscribe-btn {
+        display: grid;
+        place-content: center;
+        font-size: 0.75rem;
+        height: 2.6rem;
+        border-radius: 0.5625rem;
+    }
+}
+
+/* * changes certain elements when the min-width is >= 992px */
+
+/* @media (min-width: 1350px) {
+    main.main-container {
+    }
+} */
