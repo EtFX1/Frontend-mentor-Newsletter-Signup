@@ -66,7 +66,8 @@ label#email-label {
 input#input-textbox {
     border: 0.09px solid hsl(231, 7%, 60%);
     border-radius: 8px;
-    padding: 16.5px 256    margin-bottom: 20px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 20px;
 }
 
 /* *selects and styles the "text" attribute */
@@ -99,7 +100,8 @@ button#subscribe-btn:hover {
 }
 
 /* * changes certain elements when the min-width is >= 992px */
-@media (min-width: 992px) {
+@media (min-width: 62rem) {
+    /* * makes the body a flex container and centers everything inside it (vertically and horizontally) */
     body {
         display: flex;
         justify-content: center;
@@ -108,15 +110,19 @@ button#subscribe-btn:hover {
         height: 100vh;
     }
 
+    /* *removes the mobile image */
     img#mobile-image {
         display: none;
     }
 
+    /* *displays the desktop image */
     img#desktop-image {
         display: block;
     }
+
+    /* *making the main container (the white background) a flex container so the content and image can be side by side */
     main.main-container {
-        display: flex; /*? making the main container a flex container, so the content and image ca be side by side */
+        display: flex;
         background-color: white;
         width: 44rem;
         height: 31rem;
@@ -126,18 +132,17 @@ button#subscribe-btn:hover {
         box-shadow: 0.625rem 0.625rem 3.125rem 1.25rem;
     }
 
+    /* *targets all the written content (content that is not the image)  */
     section#main-content {
         margin-top: 3.75rem;
         padding: 0 3.4rem 0 2.5rem;
     }
 
-    /* * "Stay Updated!" value */
+    /* * targets the "Stay Updated!" heading */
     h1.heading {
         font-size: 2.3rem;
         margin-bottom: 1.8rem;
     }
-
-    /* * applies margin bottom to heading and paragraph */
 
     p.text {
         margin-bottom: 1.2rem;
@@ -152,10 +157,12 @@ button#subscribe-btn:hover {
         margin-bottom: 0.4rem;
     }
 
-    /* * list container */
+    /* * targets list container (<ul/>)*/
     ul#points-container {
         margin-bottom: 1.3rem;
     }
+
+    /* *targets the "Email address" label */
 
     label#email-label {
         font-size: 0.6rem;
@@ -164,10 +171,13 @@ button#subscribe-btn:hover {
 
     /* *form textbox */
     input#input-textbox {
-        padding: 0.625rem 1.6rem;
-        margin-bottom: 13px;
+        /* padding: 0.625rem 1.6rem; */
+        margin-bottom: 0.8rem;
+        font-size: 0.65rem;
+        padding: 0.8rem 1.5rem;
     }
 
+    /* *targets the form button */
     button#subscribe-btn {
         display: grid;
         place-content: center;
@@ -176,10 +186,3 @@ button#subscribe-btn:hover {
         border-radius: 0.5625rem;
     }
 }
-
-/* * changes certain elements when the min-width is >= 992px */
-
-/* @media (min-width: 1350px) {
-    main.main-container {
-    }
-} */
