@@ -32,56 +32,117 @@
     </head>
 
     <body>
-        <!-- !image element -->
-
-        <!-- *mobile image (displayed by default) -->
+        <!-- * mobile image -->
         <img
             id="mobile-image"
             src="./assets/images/illustration-sign-up-mobile.svg"
             alt="sign up illustration"
         />
-        <!-- !main section -->
-        <main class="main-container">
-            <section id="main-content">
-                <!-- *heading -->
-                <h1 class="heading">Stay Updated!</h1>
 
-                <!-- *paragraph -->
-                <p class="text">
-                    Join 60,000+ product managers receiving monthly updates on:
-                </p>
+        <!-- !main container -->
+        <main id="main">
+            <!-- !main card container (white background) -->
+            <div id="main-card-background">
+                <!-- *main page content (content inside of card)-->
+                <article id="main-content">
+                    <!-- *heading -->
+                    <h1 class="heading">Stay Updated!</h1>
 
-                <!-- *bullet points -->
-                <ul id="points-container">
-                    <li class="list-point">
-                        Product discovery and building what matters
-                    </li>
-                    <li class="list-point">
-                        Measuring to ensure updates are a success
-                    </li>
-                    <li class="list-point">And much more!</li>
-                </ul>
+                    <!-- *paragraph -->
+                    <p id="cta-text">
+                        Join 60,000+ product managers receiving monthly updates
+                        on:
+                    </p>
 
-                <!-- *form with a get request (retrieving information) -->
-                <form id="email-form" action="/" method="get">
-                    <label id="email-label" for="email-input"
-                        >Email address</label
+                    <!-- *bullet points -->
+                    <ul id="points-container">
+                        <li class="list-point">
+                            Product discovery and building what matters
+                        </li>
+                        <li class="list-point">
+                            Measuring to ensure updates are a success
+                        </li>
+                        <li class="list-point">And much more!</li>
+                    </ul>
+
+                    <!-- *form with a get request (retrieving information) -->
+                    <form id="email-form" action="/" method="get">
+                        <label id="email-label" for="email-input"
+                            >Email address</label
+                        >
+                        <input
+                            id="input-textbox"
+                            type="text"
+                            id="email-input"
+                        />
+
+                        <!-- *subscribe button -->
+                        <button class="button" type="button">
+                            Subscribe to monthly newsletter
+                        </button>
+                    </form>
+                </article>
+
+                <!-- * desktop image (not displayed except viewport is >= 1000px) -->
+                <img
+                    id="desktop-image"
+                    src="./assets/images/illustration-sign-up-desktop.svg"
+                    alt="sign up illustration"
+                />
+            </div>
+
+            <!-- !thank you card container-->
+            <div id="thank-you-card-background">
+                <!-- *thank you page content (content inside of card)-->
+                <article id="thank-you-card-content">
+                    <!-- *checkbox image -->
+                    <svg
+                        id="check-img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="64"
+                        height="64"
+                        viewBox="0 0 64 64"
                     >
-                    <input id="input-textbox" type="text" id="email-input" />
+                        <defs>
+                            <linearGradient
+                                id="a"
+                                x1="100%"
+                                x2="0%"
+                                y1="0%"
+                                y2="100%"
+                            >
+                                <stop offset="0%" stop-color="#FF6A3A" />
+                                <stop offset="100%" stop-color="#FF527B" />
+                            </linearGradient>
+                        </defs>
+                        <g fill="none">
+                            <circle cx="32" cy="32" r="32" fill="url(#a)" />
+                            <path
+                                stroke="#FFF"
+                                stroke-width="4"
+                                d="m18.286 34.686 8.334 7.98 19.094-18.285"
+                            />
+                        </g>
+                    </svg>
+
+                    <!-- *heading -->
+                    <h1 class="heading thanks-heading">
+                        Thanks for subscribing!
+                    </h1>
+
+                    <!-- *paragraph -->
+                    <p id="confirmation-text">
+                        A confirmation email has been sent to
+                        <span></span>. Please open it and click the button
+                        inside to confirm your subscription
+                    </p>
 
                     <!-- *subscribe button -->
-                    <button id="subscribe-btn" type="button">
-                        Subscribe to monthly newsletter
+                    <button class="button" type="button">
+                        Dismiss message
                     </button>
-                </form>
-            </section>
-
-            <!-- *desktop image (displayed by default) -->
-            <img
-                id="desktop-image"
-                src="./assets/images/illustration-sign-up-desktop.svg"
-                alt="sign up illustration"
-            />
+                </article>
+            </div>
         </main>
     </body>
 </html>

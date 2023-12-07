@@ -1,36 +1,41 @@
 * {
     font-family: "Roboto", sans-serif;
-    letter-spacing: 0.08px;
+    letter-spacing: 0.005rem;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* *contains everything inside the white part*/
-main.main-container {
+/* !MOBILE STYLES */
+
+/* *main container which contains all the content after the image */
+
+main#main {
     color: hsl(234, 29%, 20%);
     font-family: 1rem;
     line-height: 1.35rem;
-    padding: 2.3rem 1rem;
-    /* height: 100vh; */
 }
+
+/* !MAIN PAGE */
 
 /* *title image */
 img#mobile-image {
     width: 100%;
 }
 
-img#desktop-image {
-    display: none;
+/* *targets all the written content (content that is not the image)  */
+article#main-content {
+    margin-top: 3.125rem;
+    padding: 0 2.5em 0 2.5rem;
 }
 
 /* * applies margin bottom to heading and paragraph */
 .heading,
-p.text {
+p#cta-text {
     margin-bottom: 1.8rem;
 }
 
-/* * "Stay Updated!" value */
+/* * "Stay Updated!" heading */
 h1.heading {
     font-size: 2.5rem;
 }
@@ -64,7 +69,7 @@ label#email-label {
 
 /* *form textbox */
 input#input-textbox {
-    border: 0.0896px solid hsl(231, 7%, 60%);
+    border: 0.0056rem solid hsl(231, 7%, 60%);
     border-radius: 0.5rem;
     padding: 1rem 1.5rem;
     margin-bottom: 1.25rem;
@@ -77,30 +82,61 @@ input#input-textbox[type="text"] {
 
 /* *removes default color when textbox is clicked */
 input#input-textbox:focus {
-    outline-color: hsl(234, 29%, 20%);
+    outline: thin solid hsl(234, 29%, 20%);
 }
 
 /* * form button */
 
-button#subscribe-btn {
+.button {
     border: none;
     font-weight: bold;
     letter-spacing: 0.04rem;
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: white;
     background-color: hsl(235, 18%, 26%);
     width: 100%;
-    padding: 1.125rem;
+    height: 3.65rem;
     border-radius: 0.625rem;
 }
 
 /* *changes button color opacity on hover */
-button#subscribe-btn:hover {
+.button:hover {
     background-color: hsla(235, 18%, 26%, 0.9);
 }
+/* !THANK YOU PAGE */
 
-/* ! changes certain elements when the min-width is >= 992px */
-@media (min-width: 1000px) {
+/* *thank you page mobile display none BY DEFAULT, until button is clicked */
+article#thank-you-card-content {
+    display: none;
+    margin-top: 10rem;
+}
+
+/* *check image */
+svg#check-img {
+    margin-bottom: 2.5rem;
+}
+
+/* * "Thanks for subscribing!" heading */
+h1.thanks-heading {
+    line-height: 2.5rem;
+}
+
+/* * "Paragraph confirmation text" */
+p#confirmation-text {
+    line-height: 1.5rem;
+    margin-bottom: 21.5rem;
+}
+
+/* * desktop image for main page (not displayed except viewport is >= 1000px) */
+img#desktop-image {
+    display: none;
+}
+
+/* !DESKTOP */
+
+/* 1000px */
+
+@media (min-width: 62.5rem) {
     /* * makes the body a flex container and centers everything inside it (vertically and horizontally) */
     body {
         display: flex;
@@ -110,52 +146,61 @@ button#subscribe-btn:hover {
         height: 100vh;
     }
 
-    /* *removes the mobile image */
+    /* *on desktop the mobile image is removed */
     img#mobile-image {
         display: none;
     }
 
-    /* *displays the desktop image */
+    /* *on desktop the desktop image is displayed */
     img#desktop-image {
         display: block;
     }
 
-    /* *making the main container (the white background) a flex container so the content and image can be side by side */
-    main.main-container {
-        display: flex;
+    /* *common properties applied to both main card and thank you card container */
+    div#main-card-background,
+    div#thank-you-card-background {
         background-color: white;
-        width: 62vw;
-        height: 34rem;
-        padding: 1.1rem 1.1rem 1.1rem 0;
         border-radius: 2rem;
         border: 0;
         box-shadow: 0.625rem 0.625rem 3.125rem 1.25rem;
     }
 
+    /* *targets background of card*/
+    /* *making the white background a flex container so the content and image can be side by side */
+
+    div#main-card-background {
+        display: flex;
+        width: 62vw;
+        height: 32rem;
+        padding: 1.1rem 1.1rem 1.1rem 0;
+        /* display: none; */
+    }
+
     /* *targets all the written content (content that is not the image)  */
-    section#main-content {
+    article#main-content {
         margin-top: 2.8rem;
-        padding: 0 3.3rem 0 2.5rem;
+        padding: 0 4rem 0 2.5rem;
     }
 
     /* * targets the "Stay Updated!" heading */
     h1.heading {
-        font-size: 1.8rem;
-        margin-bottom: 2.2rem;
+        font-size: 1.9rem;
+        margin-bottom: 2rem;
     }
 
-    p.text {
-        margin-bottom: 1.5rem;
-    }
-
-    p.text,
+    /* *paragraph content */
+    p#cta-text,
     li.list-point {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+    }
+
+    p#cta-text {
+        margin-bottom: 1.5rem;
     }
 
     /* * targets list container (<ul/>)*/
     ul#points-container {
-        margin-bottom: 2.2rem;
+        margin-bottom: 1.8rem;
     }
 
     /* *targets a list point */
@@ -172,90 +217,95 @@ button#subscribe-btn:hover {
     /* *form textbox */
     input#input-textbox {
         margin-bottom: 0.8rem;
-        font-size: 0.65rem;
         padding: 0.8rem 1.5rem;
     }
 
     /* *targets the form button */
-    button#subscribe-btn {
+    .button {
         display: grid;
         place-content: center;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         height: 2.6rem;
         border-radius: 0.5625rem;
-    }
-}
-
-/* 1160px */
-@media (min-width: 72.5rem) {
-    /* * targets the "Stay Updated!" heading */
-    h1.heading {
-        font-size: 2.4rem;
+        transition: 0.24s;
     }
 
-    section#main-content {
-        margin-top: 4rem;
-        padding: 0 3.5rem 0 2.7rem;
+    /* *changes button color opacity on hover */
+    .button:hover {
+        background-image: linear-gradient(to right, #fe537b, #fe6646);
+        box-shadow: 0.3125rem 0.625rem 2.5rem -0.3125rem hsl(4, 100%, 67%);
     }
-}
 
-/* 1200px  */
-@media (min-width: 75rem) {
-    section#main-content {
-        padding: 0 4rem 0 3.3rem;
+    /* !THANK YOU PAGE */
+
+    /* * thank you card is display none BY DEFAULT (until thank you button is clicked) */
+    div#thank-you-card-background {
+        display: none;
+        width: 32rem;
+        height: 31rem;
+        padding: 3.125rem;
+    }
+
+    /* * contents of thank you card */
+    article#thank-you-card-content {
+        margin-top: 0;
+        display: block;
+    }
+
+    h1.thanks-heading {
+        line-height: 2.8125rem;
+        font-size: 3.125rem;
+    }
+
+    p#confirmation-text {
+        line-height: 1.5rem;
+        margin-bottom: 3.125rem;
     }
 }
 
 /* 1260px */
 @media (min-width: 78.75rem) {
-    main.main-container {
-        width: 58.75rem;
-        height: 38.75rem;
+    div#main-card-background {
+        width: 53rem;
+        height: 37rem;
     }
 
-    section#main-content {
-        padding: 0 5rem 0 4.3rem;
-        margin-top: 5.75rem;
+    article#main-content {
+        margin-top: 4.6rem;
+        padding-right: 4.5rem;
     }
 
-    /* * targets the "Stay Updated!" heading */
     h1.heading {
-        font-size: 3rem;
-        margin-bottom: 2.5rem;
+        font-size: 2.8rem;
+        margin-bottom: 3rem;
     }
 
-    p.text,
+    p#cta-text,
     li.list-point {
-        font-size: 1rem;
-    }
-
-    p.text {
-        margin-bottom: 1.8rem;
-    }
-
-    li.list-point {
-        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
     }
 
     /* * targets list container (<ul/>)*/
     ul#points-container {
-        margin-bottom: 3rem;
+        margin-bottom: 2.1rem;
+    }
+
+    /* *targets a list point */
+    li.list-point {
+        margin-bottom: 0.9rem;
     }
 
     label#email-label {
-        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
     }
 
-    /* *form textbox */
     input#input-textbox {
-        margin-bottom: 0.8rem;
-        font-size: 0.65rem;
-        padding: 1rem 1.5rem;
+        padding: 1.08rem 1.5rem;
+        margin-bottom: 1.2rem;
     }
 
-    /* *targets the form button */
-    button#subscribe-btn {
-        font-size: 0.89rem;
+    .button {
         height: 3.2rem;
+        font-size: 0.8rem;
     }
 }
