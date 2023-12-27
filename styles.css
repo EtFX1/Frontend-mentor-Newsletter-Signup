@@ -75,7 +75,7 @@ input#input-textbox {
     margin-bottom: 1.25rem;
 }
 
-/* *selects and styles the "text" attribute */
+/* *selects and styles the "text" attribute in the "input element */
 input#input-textbox[type="text"] {
     color: hsl(228, 2%, 50%);
 }
@@ -136,7 +136,7 @@ img#desktop-image {
 
 /* 1000px */
 
-@media (min-width: 62.5rem) {
+@media only screen and (min-width: 62.5rem) {
     /* * makes the body a flex container and centers everything inside it (vertically and horizontally) */
     body {
         display: flex;
@@ -170,28 +170,29 @@ img#desktop-image {
 
     div#main-card-background {
         display: flex;
-        width: 62vw;
-        height: 32rem;
-        padding: 1.1rem 1.1rem 1.1rem 0;
+        width: 68vw;
+        max-width: 49.4rem;
+        height: 35rem;
+        padding: 1.1rem 1.1rem 1.1rem 0rem;
         /* display: none; */
     }
 
     /* *targets all the written content (content that is not the image)  */
     article#main-content {
-        margin-top: 2.8rem;
-        padding: 0 4rem 0 2.5rem;
+        margin-top: 5rem;
+        padding-right: 4rem;
     }
 
     /* * targets the "Stay Updated!" heading */
     h1.heading {
-        font-size: 1.9rem;
-        margin-bottom: 2rem;
+        font-size: 2.1rem;
+        margin-bottom: 2.2rem;
     }
 
     /* *paragraph content */
     p#cta-text,
     li.list-point {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     p#cta-text {
@@ -200,12 +201,12 @@ img#desktop-image {
 
     /* * targets list container (<ul/>)*/
     ul#points-container {
-        margin-bottom: 1.8rem;
+        margin-bottom: 2.1rem;
     }
 
     /* *targets a list point */
     li.list-point {
-        margin-bottom: 0.7rem;
+        margin-bottom: 1rem;
     }
 
     /* *targets the "Email address" label */
@@ -216,7 +217,7 @@ img#desktop-image {
 
     /* *form textbox */
     input#input-textbox {
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
         padding: 0.8rem 1.5rem;
     }
 
@@ -224,8 +225,8 @@ img#desktop-image {
     .button {
         display: grid;
         place-content: center;
-        font-size: 0.6rem;
-        height: 2.6rem;
+        font-size: 75%;
+        height: 3rem;
         border-radius: 0.5625rem;
         transition: 0.24s;
     }
@@ -263,49 +264,10 @@ img#desktop-image {
     }
 }
 
-/* 1260px */
-@media (min-width: 78.75rem) {
-    div#main-card-background {
-        width: 53rem;
-        height: 37rem;
-    }
-
-    article#main-content {
-        margin-top: 4.6rem;
-        padding-right: 4.5rem;
-    }
-
+/* 1200px */
+@media only screen and (min-width: 75rem) {
+    /* * "Thanks for subscribing!" heading */
     h1.heading {
-        font-size: 2.8rem;
-        margin-bottom: 3rem;
-    }
-
-    p#cta-text,
-    li.list-point {
-        font-size: 0.9rem;
-    }
-
-    /* * targets list container (<ul/>)*/
-    ul#points-container {
-        margin-bottom: 2.1rem;
-    }
-
-    /* *targets a list point */
-    li.list-point {
-        margin-bottom: 0.9rem;
-    }
-
-    label#email-label {
-        margin-bottom: 0.5rem;
-    }
-
-    input#input-textbox {
-        padding: 1.08rem 1.5rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .button {
-        height: 3.2rem;
-        font-size: 0.8rem;
+        font-size: 2.7rem;
     }
 }
