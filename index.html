@@ -28,6 +28,9 @@
         />
         <!-- !Stylesheet link -->
         <link rel="stylesheet" href="styles.css" />
+        <!-- !CDN Link -->
+        <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+        <!-- ! JS File -->
         <script defer src="index.js"></script>
     </head>
 
@@ -67,17 +70,22 @@
 
                     <!-- *form with a get request (retrieving information) -->
                     <form id="email-form" action="/" method="get">
-                        <label id="email-label" for="email-input"
-                            >Email address</label
-                        >
+                        <!-- * email address and error message container -->
+                        <div id="labels-cont">
+                            <label id="email-label" for="input-textbox"
+                                >Email address</label
+                            >
+                            <strong id="error-msg">Valid email required</strong>
+                        </div>
+
                         <input
-                            id="input-textbox"
-                            type="text"
                             id="email-input"
+                            type="text"
+                            placeholder="email@company.com"
                         />
 
                         <!-- *subscribe button -->
-                        <button class="button" type="button">
+                        <button class="button" type="submit">
                             Subscribe to monthly newsletter
                         </button>
                     </form>
@@ -133,8 +141,8 @@
                     <!-- *paragraph -->
                     <p id="confirmation-text">
                         A confirmation email has been sent to
-                        <span></span>. Please open it and click the button
-                        inside to confirm your subscription
+                        <strong id="email-insert"></strong>. Please open it and
+                        click the button inside to confirm your subscription
                     </p>
 
                     <!-- *subscribe button -->
