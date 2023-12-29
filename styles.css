@@ -76,6 +76,7 @@ div#labels-cont {
     display: flex;
     justify-content: space-between;
 }
+
 /* *form label (email address) */
 label#email-label,
 strong#error-msg {
@@ -93,13 +94,14 @@ strong#error-msg {
 /* *form textbox */
 input#email-input {
     border: 0.0056rem solid hsl(231, 7%, 60%);
+    font-size: 1rem;
     border-radius: 0.5rem;
-    padding: 1rem 1.5rem;
+    padding: 1.35rem 1.5rem;
     margin-bottom: 1.25rem;
 }
 
 /* *selects and styles the "text" attribute in the "input element */
-input#email-input[type="text"] {
+input#email-input[type="email"] {
     color: var(--charcoal-grey-90-opaque);
 }
 
