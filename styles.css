@@ -138,7 +138,7 @@ input#email-input:focus {
 /* *thank you card container (white background) */
 div#thank-you-card-background {
     display: none;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 1.5rem;
 }
 
 /* *thank you page mobile display none BY DEFAULT, until button is clicked */
