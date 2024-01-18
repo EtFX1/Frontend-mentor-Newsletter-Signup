@@ -35,30 +35,42 @@
     </head>
 
     <body>
-        <!-- * mobile image -->
-        <img
-            id="mobile-image"
-            src="./assets/images/illustration-sign-up-mobile.svg"
-            alt="sign up illustration"
-        />
-
         <!-- !main container -->
-        <main id="main">
+        <main class="container">
+            <picture>
+                <!-- * mobile image -->
+
+                <source
+                    media="(min-width: 1000px)"
+                    srcset="/assets/images/illustration-sign-up-desktop.svg"
+                />
+                <source
+                    media="(min-width: 375px)"
+                    srcset="/assets/images/illustration-sign-up-mobile.svg"
+                />
+
+                <!-- * mobile image -->
+                <img
+                    class="mobile-image"
+                    src="/assets/images/illustration-sign-up-mobile.svg"
+                    alt="sign up illustration"
+                />
+            </picture>
             <!-- !main card container (white background) -->
-            <div id="main-card-background">
+            <div class="main-card-background">
                 <!-- *main page content (content inside of card)-->
-                <article id="main-content">
+                <div class="main-content">
                     <!-- *heading -->
                     <h1 class="heading">Stay updated!</h1>
 
                     <!-- *paragraph -->
-                    <p id="cta-text">
+                    <p class="cta-text">
                         Join 60,000+ product managers receiving monthly updates
                         on:
                     </p>
 
                     <!-- *bullet points -->
-                    <ul id="points-container">
+                    <ul class="points-container">
                         <li class="list-point">
                             Product discovery and building what matters
                         </li>
@@ -69,18 +81,20 @@
                     </ul>
 
                     <!-- *form with a get request (retrieving information) -->
-                    <form id="email-form" action="/" method="get">
+                    <form class="email-form" action="/" method="get">
                         <!-- * email address and error message container -->
-                        <div id="labels-cont">
-                            <label id="email-label" for="input-textbox"
+                        <div class="labels-cont">
+                            <label class="email-label" for="input-textbox"
                                 >Email address</label
                             >
-                            <strong id="error-msg">Valid email required</strong>
+                            <strong class="error-msg"
+                                >Valid email required</strong
+                            >
                         </div>
 
                         <!-- *form input -->
                         <input
-                            id="email-input"
+                            class="email-input"
                             type="email"
                             placeholder="email@company.com"
                         />
@@ -90,23 +104,22 @@
                             Subscribe to monthly newsletter
                         </button>
                     </form>
-                </article>
+                </div>
 
-                <!-- * desktop image (not displayed except viewport is >= 1000px) -->
                 <img
-                    id="desktop-image"
-                    src="./assets/images/illustration-sign-up-desktop.svg"
+                    class="desktop-image"
+                    src="/assets/images/illustration-sign-up-desktop.svg"
                     alt="sign up illustration"
                 />
             </div>
 
             <!-- !thank you card container (white background)-->
-            <div id="thank-you-card-background">
+            <div class="thank-you-card-background">
                 <!-- *thank you page content (content inside of card)-->
-                <article id="thank-you-card-content">
+                <div class="thank-you-card-content">
                     <!-- *checkbox image -->
                     <svg
-                        id="check-img"
+                        class="check-img"
                         xmlns="http://www.w3.org/2000/svg"
                         width="64"
                         height="64"
@@ -114,7 +127,7 @@
                     >
                         <defs>
                             <linearGradient
-                                id="a"
+                                class="a"
                                 x1="100%"
                                 x2="0%"
                                 y1="0%"
@@ -140,17 +153,17 @@
                     </h1>
 
                     <!-- *paragraph -->
-                    <p id="confirmation-text">
+                    <p class="confirmation-text">
                         A confirmation email has been sent to
-                        <strong id="email-insert"></strong>. Please open it and
-                        click the button inside to confirm your subscription
+                        <strong class="email-insert"></strong>. Please open it
+                        and click the button inside to confirm your subscription
                     </p>
 
                     <!-- *subscribe button -->
                     <button class="button" type="button">
                         Dismiss message
                     </button>
-                </article>
+                </div>
             </div>
         </main>
     </body>
