@@ -28,6 +28,10 @@
     font-family: 1rem;
 }
 
+.main-card-background {
+    display: flex;
+}
+
 /* !MAIN PAGE */
 
 /* *title image */
@@ -89,6 +93,11 @@
 /* *error message */
 .error-msg {
     display: none;
+}
+
+/* *styles for the error message displayed when the user types in a wrong email */
+.displayed-error-msg {
+    display: block;
     color: var(--tomato);
 }
 
@@ -101,8 +110,15 @@
     margin-bottom: 1.25rem;
 }
 
+/* *class styles that are applied to the input textbox the user types in a wrong email */
+.email-input-error {
+    background-color: var(--tomato-20-opaque);
+    border: 1px solid #ff000085;
+    color: var(--tomato-70-opaque);
+}
+
 /* *selects and styles the "text" attribute in the "input element */
-.email-input[type="email"] {
+.email-input[type="text"] {
     color: var(--charcoal-grey-90-opaque);
 }
 
@@ -144,14 +160,9 @@
     padding: 0 1.5rem 1.5rem;
 }
 
-/* *thank you page mobile display none BY DEFAULT, until button is clicked */
-.thank-you-card-content {
-    margin-top: 10rem;
-}
-
 /* *check image */
 .check-img {
-    margin-bottom: 2.5rem;
+    margin: 3.125rem 0 2.5rem 0;
 }
 
 /* * "Thanks for subscribing!" heading */
@@ -162,11 +173,19 @@
 /* * "Paragraph confirmation text" */
 .confirmation-text {
     line-height: 1.5rem;
-    margin-bottom: 21.5rem;
+    margin-bottom: 17rem;
 }
 
 .desktop-image {
     display: none; /*Hide the mobile image on desktop*/
+}
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
 }
 
 /* !DESKTOP */
@@ -205,7 +224,6 @@
     /* *making the white background a flex container so the content and image can be side by side */
 
     .main-card-background {
-        display: flex;
         width: clamp(46.875rem, 65vw, 57.1875rem);
         height: clamp(36.25rem, 65vh, 37.5rem);
         padding: 1.1rem 1.1rem 1.1rem 0rem;
@@ -213,11 +231,11 @@
 
     .main-content {
         padding: 0 6% 0 6%;
-        margin-top: 7.5%;
+        margin-top: 6%;
     }
 
     .heading {
-        font-size: 3.65vw;
+        font-size: clamp(2.2813rem, 3.65vw, 3.4375rem);
         margin-bottom: 6%;
     }
 
