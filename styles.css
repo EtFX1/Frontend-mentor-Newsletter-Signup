@@ -28,7 +28,14 @@
     font-family: 1rem;
 }
 
-/* *display block and display none utility classes that are added/removed from elements with javacript */
+/*  *targets background of card */
+/* *making the white background a flex container so the content and image can be side by side */
+
+.main-card-background {
+    display: flex;
+}
+
+/* *display block and display none utility classes that are added/removed from elements with javascript */
 
 .display-none {
     display: none;
@@ -36,13 +43,6 @@
 
 .display-block {
     display: block;
-}
-
-/*  *targets background of card */
-/* *making the white background a flex container so the content and image can be side by side */
-
-.main-card-background {
-    display: flex;
 }
 
 /* !MAIN PAGE */
@@ -249,7 +249,7 @@
     .thank-you-card-background {
         padding: 0 3rem;
         width: 31.25rem;
-        height: 29rem;
+        height: 29.5rem;
     }
 
     .thanks-heading {
@@ -260,9 +260,10 @@
     .check-img {
         margin-bottom: 1.5rem;
     }
+
     /* * "Paragraph confirmation text" */
     .confirmation-text {
-        /* todo: might make variable */
-        margin-bottom: 2rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.9rem;
     }
 }

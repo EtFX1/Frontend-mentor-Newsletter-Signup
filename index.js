@@ -28,23 +28,21 @@ form.addEventListener("submit", (event) => {
         errorMsg.classList.add("error-message-styles");
     }
 
-    // emailIncorrect();
 
     // * function that does some styling when the user types in the correct email 
     emailCorrect = () => {
 
-        // * the main card dissapears
+        // * the main card disappears
         mainCard.classList.add("display-none");
 
         //* the thank you card appears
+        thankYouCard.classList.remove("display-none");
         thankYouCard.classList.add("display-block");
         userEmailInsert.innerText = userEmailInput;
     }
 
-    // emailCorrect()
-
-    // //* conditional statement to run the either of the functions  based on whether the email input is correct or not
-    // !validation ? emailIncorrect() : emailCorrect();
+    //* conditional statement to run the either of the functions  based on whether the email input is correct or not
+    !validation ? emailIncorrect() : emailCorrect();
 })
 
 
