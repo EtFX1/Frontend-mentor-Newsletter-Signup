@@ -4,7 +4,7 @@ const inputBox = document.querySelector(".email-input");
 const mainCard = document.querySelector(".main-card-background");
 const thankYouCard = document.querySelector(".thank-you-card-background");
 const userEmailInsert = document.querySelector(".email-insert");
-
+const errorMsg = document.querySelector(".error-msg");
 
 //! submit event listener for the form that processes the user input when the form is submitted
 form.addEventListener("submit", (event) => {
@@ -24,7 +24,8 @@ form.addEventListener("submit", (event) => {
         inputBox.classList.add("email-input-error");
 
         //* the error message is displayed
-        errorMsg.classList.add("displayed-error-msg");
+        errorMsg.classList.remove("display-none");
+        errorMsg.classList.add("error-message-styles");
     }
 
     // emailIncorrect();
@@ -40,7 +41,7 @@ form.addEventListener("submit", (event) => {
         userEmailInsert.innerText = userEmailInput;
     }
 
-    emailCorrect()
+    // emailCorrect()
 
     // //* conditional statement to run the either of the functions  based on whether the email input is correct or not
     // !validation ? emailIncorrect() : emailCorrect();
