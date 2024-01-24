@@ -43,6 +43,7 @@ form.addEventListener("submit", (event) => {
 
     //* conditional statement to run the either of the functions  based on whether the email input is correct or not
     !validation ? emailIncorrect() : emailCorrect();
+
 })
 
 

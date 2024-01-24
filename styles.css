@@ -33,6 +33,7 @@
 
 .main-card-background {
     display: flex;
+    flex-direction: column;
 }
 
 /* *display block and display none utility classes that are added/removed from elements with javascript */
@@ -115,7 +116,7 @@
     border: 0.0056rem solid hsl(231, 7%, 60%);
     font-size: 0.8rem;
     border-radius: 0.5rem;
-    padding: 1.35rem 1.5rem;
+    padding: 1.25rem 1.5rem;
     margin-bottom: 1.25rem;
 }
 
@@ -200,6 +201,8 @@
         box-sizing: content-box;
     }
 
+    /* !MAIN CARD */
+
     .desktop-image {
         display: block; /*Show the desktop image on desktop*/
     }
@@ -220,6 +223,7 @@
     /* *targets background of card*/
 
     .main-card-background {
+        flex-direction: row;
         width: clamp(46.875rem, 65vw, 57.1875rem);
         height: clamp(36.25rem, 65vh, 37.5rem);
         padding: 1.1rem 1.1rem 1.1rem 0rem;
@@ -237,11 +241,12 @@
 
     .cta-text,
     .points-container {
-        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        font-size: clamp(15px, 1.1vw, 16px);
     }
 
     .email-input {
-        font-size: 1rem;
+        padding: 1.1rem 1.25rem;
+        font-size: 0.9rem;
     }
 
     /* !THANK YOU CARD */
